@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <DockerTargetOS>Linux</DockerTargetOS>
     <UserSecretsId>28f96a9a-bd4b-43f7-8e3e-0d8efdb5d8da</UserSecretsId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/Hantse/DI.Autoregister</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

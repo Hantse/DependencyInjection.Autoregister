@@ -34,14 +34,13 @@ namespace DI.Autoregister
                         AddToStack(services, type);
                     }
                 }
+            }
 
-
-                foreach (Type type in assembly.GetTypes())
+            foreach (Type type in assembly.GetTypes())
+            {
+                if (type.GetCustomAttributes(typeof(DependencyRegistration), true).Length > 0)
                 {
-                    if (type.GetCustomAttributes(typeof(DependencyRegistration), true).Length > 0)
-                    {
-                        AddToStack(services, type);
-                    }
+                    AddToStack(services, type);
                 }
             }
         }
@@ -50,7 +49,23 @@ namespace DI.Autoregister
         {
             ServiceRegistrationType registrationType = GetRegistrationType(type);
             Type interfaceOf = GetRegistrationInterfaceType(type);
+            Type[] interfaces = type.GetInterfaces();
 
+            if (interfaceOf == null && interfaces.Length > 0)
+            {
+                for (int i = 0; i < interfaces.Length; i++)
+                {
+                    RegisterFromInterface(services, registrationType, type, interfaces[i]);
+                }
+            }
+            else
+            {
+                RegisterFromInterface(services, registrationType, type, interfaceOf);
+            }
+        }
+
+        private static void RegisterFromInterface(IServiceCollection services, ServiceRegistrationType registrationType, Type type, Type interfaceOf)
+        {
             if (registrationType == ServiceRegistrationType.SCOPED)
             {
                 if (interfaceOf != null)

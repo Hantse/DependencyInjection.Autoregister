@@ -15,10 +15,14 @@ namespace DI.Autoregister.Sample.Controllers
         private readonly FirstBusiness _firstBusiness;
 
         private readonly SecondBusiness _secondBusiness;
-        public ValuesController(FirstBusiness firstBusiness, SecondBusiness secondBusiness)
+
+        private readonly IThirdBusiness _thirdBusiness;
+
+        public ValuesController(FirstBusiness firstBusiness, SecondBusiness secondBusiness, IThirdBusiness thirdBusiness)
         {
             _firstBusiness = firstBusiness;
             _secondBusiness = secondBusiness;
+            _thirdBusiness = thirdBusiness;
         }
 
         // GET api/values
