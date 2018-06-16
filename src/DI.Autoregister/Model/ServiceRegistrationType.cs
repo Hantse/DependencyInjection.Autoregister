@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DI.Autoregister
+﻿namespace DI.Autoregister
 {
     public enum ServiceRegistrationType
     {
