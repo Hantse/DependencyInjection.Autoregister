@@ -23,7 +23,9 @@ namespace DI.Autoregister
 
         private static void GetTypesWithHelpAttribute(IServiceCollection services, Assembly assembly)
         {
-            foreach (AssemblyName asem in assembly.GetReferencedAssemblies())
+            foreach (AssemblyName asem in assembly.GetReferencedAssemblies()
+                .Where(a => !a.FullName.StartsWith("System")
+                            && !a.FullName.StartsWith("Microsoft")))
             {
                 Assembly loadAssembly = Assembly.Load(asem);
 
@@ -34,6 +36,8 @@ namespace DI.Autoregister
                         AddToStack(services, type);
                     }
                 }
+
+                GetTypesWithHelpAttribute(services, loadAssembly);
             }
 
             foreach (Type type in assembly.GetTypes())
@@ -104,5 +108,4 @@ namespace DI.Autoregister
             return type.GetCustomAttributes(typeof(DependencyRegistration), true).First() as DependencyRegistration;
         }
     }
-
 }

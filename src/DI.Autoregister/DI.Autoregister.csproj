@@ -5,8 +5,13 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/Hantse/DI.Autoregister</PackageProjectUrl>
-    <FileVersion>1.1.0.0</FileVersion>
+    <FileVersion>1.2.0.0</FileVersion>
     <Version>1.1.0</Version>
+    <Authors>Patrick GRASSEELS</Authors>
+    <Company>Ice-Artefact</Company>
+    <Description>Auto register for DI</Description>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <PackageReleaseNotes>- Add iterate on sub assembly, remove System &amp; Microsoft namespace (startwith)</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

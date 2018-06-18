@@ -9,7 +9,7 @@ namespace DI.Autoregister.Sample.Business
     }
 
     [DependencyRegistration]
-    public class ThirdBusiness : IThirdBusiness
+    public partial class ThirdBusiness : IThirdBusiness
     {
     }
 }

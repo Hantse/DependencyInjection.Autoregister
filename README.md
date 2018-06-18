@@ -45,7 +45,3 @@ public void ConfigureServices(IServiceCollection services)
     services.AddAutoRegister();
 }
 ```
-
-# Nuget
-
-https://www.nuget.org/packages/DI.Autoregister/
