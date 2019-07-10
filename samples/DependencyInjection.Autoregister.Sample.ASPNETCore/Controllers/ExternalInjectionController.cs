@@ -1,5 +1,4 @@
-﻿using DependencyInjection.Autoregister.Sample.Business;
-using DependencyInjection.Autoregister.Sample.ExternalInjection;
+﻿using DependencyInjection.Autoregister.Sample.ExternalInjection;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
