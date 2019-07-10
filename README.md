@@ -8,8 +8,9 @@ Dependency injection autoregistration with attribute
 ```
 PM> Install-Package DI.Autoregister -Version 1.2.0
 ```
+Or in dotnet cli
 ```
-> dotnet add package DI.Autoregister --version 1.2.0
+dotnet add package DI.Autoregister --version 1.2.0
 ```
 
 # Use attribute on class
