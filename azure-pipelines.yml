@@ -3,6 +3,8 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+name: DependencyInjection.Autoregister-version2.0
+
 trigger:
 - master
 
