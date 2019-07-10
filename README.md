@@ -4,7 +4,12 @@
 Dependency injection autoregistration with attribute
 
 ## Install package
+[![NuGet version](https://badge.fury.io/nu/DI.Autoregister.svg)](https://badge.fury.io/nu/DI.Autoregister)
 ```
+PM> Install-Package DI.Autoregister -Version 1.2.0
+```
+```
+> dotnet add package DI.Autoregister --version 1.2.0
 ```
 
 # Use attribute on class
