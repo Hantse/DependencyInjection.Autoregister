@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/Hantse/DependencyInjection.Autoregister</PackageProjectUrl>
+    <FileVersion>2.0.0</FileVersion>
+    <Version>1.2.0</Version>
+    <Authors>Patrick GRASSEELS</Authors>
+    <Company>Patrick GRASSEELS</Company>
+    <Description>Auto register for dependency injection</Description>
+    <AssemblyVersion>2.0.0</AssemblyVersion>
+    <PackageReleaseNotes>
+      - Refactor to provide an abstraction for user implementation
+    </PackageReleaseNotes>
+  </PropertyGroup>
+
+</Project>

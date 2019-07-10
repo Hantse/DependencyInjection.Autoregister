@@ -5,16 +5,16 @@ EXPOSE 44369
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY samples/DI.Autoregister.Sample/DI.Autoregister.Sample.csproj samples/DI.Autoregister.Sample/
-RUN dotnet restore samples/DI.Autoregister.Sample/DI.Autoregister.Sample.csproj
+COPY samples/DI.Autoregister.Sample/DependencyInjection.Autoregister.Sample.csproj samples/DI.Autoregister.Sample/
+RUN dotnet restore samples/DI.Autoregister.Sample/DependencyInjection.Autoregister.Sample.csproj
 COPY . .
 WORKDIR /src/samples/DI.Autoregister.Sample
-RUN dotnet build DI.Autoregister.Sample.csproj -c Release -o /app
+RUN dotnet build DependencyInjection.Autoregister.Sample.csproj -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish DI.Autoregister.Sample.csproj -c Release -o /app
+RUN dotnet publish DependencyInjection.Autoregister.Sample.csproj -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "DI.Autoregister.Sample.dll"]
+ENTRYPOINT ["dotnet", "DependencyInjection.Autoregister.Sample.dll"]

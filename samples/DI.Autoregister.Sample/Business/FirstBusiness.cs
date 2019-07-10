@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DependencyInjection.Autoregister.Abstraction.Attributes;
 
-namespace DI.Autoregister.Sample.Business
+namespace DependencyInjection.Autoregister.Sample.Business
 {
     [DependencyRegistration]
     public class FirstBusiness

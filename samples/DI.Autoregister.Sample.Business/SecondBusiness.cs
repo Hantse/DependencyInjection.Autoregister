@@ -1,6 +1,6 @@
-﻿using System;
+﻿using DependencyInjection.Autoregister.Abstraction.Attributes;
 
-namespace DI.Autoregister.Sample.Business
+namespace DependencyInjection.Autoregister.Sample.ExternalInjection
 {
     [DependencyRegistration]
     public class SecondBusiness

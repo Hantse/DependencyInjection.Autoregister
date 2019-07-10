@@ -1,4 +1,4 @@
-﻿namespace DI.Autoregister
+﻿namespace DependencyInjection.Autoregister.Abstraction.Models
 {
     public enum ServiceRegistrationType
     {

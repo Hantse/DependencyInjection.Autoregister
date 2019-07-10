@@ -1,11 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using DependencyInjection.Autoregister.Abstraction.Attributes;
+using DependencyInjection.Autoregister.Abstraction.Models;
+using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
-namespace DI.Autoregister
+namespace DependencyInjection.Autoregister.Providers.ServiceCollection
 {
     public static class AddAutoRegistration
     {
