@@ -22,7 +22,6 @@ steps:
   displayName: dotnet test
   inputs:
     command: 'test'
-    arguments: '--no-build'
     projects: './tests/DependencyInjection.Autoregister.Abstraction.Tests/DependencyInjection.Autoregister.Abstraction.Tests.csproj'
 
 - task: DotNetCoreCLI@2
