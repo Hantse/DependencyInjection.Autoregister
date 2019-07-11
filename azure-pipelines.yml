@@ -17,19 +17,18 @@ steps:
   displayName: Restore
   inputs:
     command: 'restore'
-
-- task: DotNetCoreCLI@2
-  displayName: dotnet test
-  inputs:
-    command: 'test'
-    projects: './tests/DependencyInjection.Autoregister.Abstraction.Tests/DependencyInjection.Autoregister.Abstraction.Tests.csproj'
-
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
   inputs:
     command: 'build'
     arguments: '--configuration $(buildConfiguration) /p:Version=$(buildNumber)'
     projects: './src/DependencyInjection.Autoregister/DependencyInjection.Autoregister.Abstraction.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: dotnet test
+  inputs:
+    command: 'test'
+    projects: './tests/DependencyInjection.Autoregister.Abstraction.Tests/DependencyInjection.Autoregister.Abstraction.Tests.csproj'
 
 # - task: DotNetCoreCLI@2
 #   displayName: "dotnet pack"
