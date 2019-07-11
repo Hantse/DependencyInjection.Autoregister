@@ -9,7 +9,7 @@ namespace AssemblyMockTests
     {
     }
 
-    [DependencyRegistration(DependencyInjection.Autoregister.Abstraction.Models.ServiceRegistrationType.SCOPED)]
+    [DependencyRegistration("MyName")]
     public class SecondClass : ISecondClass
     {
     }
