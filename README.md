@@ -107,7 +107,7 @@ public class ThirdBusiness : IThirdBusiness, ISecondBusiness
 ```
 
 
-# DependencyInjection.Autoregister.Providers.ServiceCollection	
+## DependencyInjection.Autoregister.Providers.ServiceCollection	
 It's a implementation for autoregister on IServiceCollection provider.
 
 ## Install package
