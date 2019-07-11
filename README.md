@@ -105,3 +105,39 @@ public class ThirdBusiness : IThirdBusiness, ISecondBusiness
     }     
 }
 ```
+
+
+# DependencyInjection.Autoregister.Providers.ServiceCollection	
+It's a implementation for autoregister on IServiceCollection provider.
+
+## Install package
+[![NuGet version](https://badge.fury.io/nu/DependencyInjection.Autoregister.Providers.ServiceCollection.svg)](https://badge.fury.io/nu/DependencyInjection.Autoregister.Providers.ServiceCollection)
+
+Package Manager
+```
+PM> Install-Package DependencyInjection.Autoregister.Providers.ServiceCollection -Version 0.0.1-preview01
+```
+DotNet CLI
+```
+dotnet add package DependencyInjection.Autoregister.Providers.ServiceCollection --version 0.0.1-preview01
+```
+
+# Autoregister on ASPNET Core
+```csharp
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+        services.AddAutoRegister();
+    }
+}
+```
+
+# Autoregister without ASPNET Core
+```csharp
+var services = new Microsoft.Extensions.DependencyInjection.ServiceCollection();
+services.AddAutoRegister(Assembly.GetAssembly(typeof(MyAssemblyName)));
+var provider = services.BuildServiceProvider();
+var resolveService = provider.GetService<FirstClass>();
+```
