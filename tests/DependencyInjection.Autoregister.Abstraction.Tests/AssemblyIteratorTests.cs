@@ -21,5 +21,23 @@ namespace DependencyInjection.Autoregister.Abstraction.Tests
             Assert.Equal(2, servicesFound.Length);
             Assert.Contains(servicesFound, a => a.ServiceType.Equals(typeof(AssemblyMockTests.FirstClass)));
         }
+
+        [Theory]
+        [InlineData("namespace", 2)]
+        public void ShouldLoadSomeServicesFromExecutingAssembly_WithSpecificNamespaceStart(string startWith, int exceptedResult)
+        {
+            ServiceRegistration[] servicesFound = AssemblyIterator.LoadFromAssembly(Assembly.GetExecutingAssembly(), startWith);
+            Assert.Equal(2, servicesFound.Length);
+            Assert.Contains(servicesFound, a => a.ServiceType.Equals(typeof(AssemblyMockTests.FirstClass)));
+        }
+
+        [Theory]
+        [InlineData("namespace", 2)]
+        public void ShouldLoadSomeServicesFromExecutingAssembly_WithSpecificNamespacesStart(string startsWith, int exceptedResult)
+        {
+            ServiceRegistration[] servicesFound = AssemblyIterator.LoadFromAssembly(Assembly.GetExecutingAssembly(), startsWith.Split(";"));
+            Assert.Equal(2, servicesFound.Length);
+            Assert.Contains(servicesFound, a => a.ServiceType.Equals(typeof(AssemblyMockTests.FirstClass)));
+        }
     }
 }
