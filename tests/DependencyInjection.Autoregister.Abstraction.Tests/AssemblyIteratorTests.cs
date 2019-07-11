@@ -3,6 +3,7 @@ using DependencyInjection.Autoregister.Abstraction.Models;
 using System.Reflection;
 using Xunit;
 using AssemblyMockTests;
+using System.Linq;
 
 namespace DependencyInjection.Autoregister.Abstraction.Tests
 {
@@ -17,8 +18,8 @@ namespace DependencyInjection.Autoregister.Abstraction.Tests
         public void ShouldLoadSomeServicesFromExecutingAssembly()
         {
             ServiceRegistration[] servicesFound = AssemblyIterator.LoadFromAssembly(Assembly.GetExecutingAssembly());
-
-            ServiceRegistration[] servicesFounds = AssemblyIterator.LoadFromAssembly(Assembly.GetEntryAssembly());
+            Assert.Equal(2, servicesFound.Length);
+            Assert.Contains(servicesFound, a => a.ServiceType.Equals(typeof(AssemblyMockTests.FirstClass)));
         }
     }
 }
