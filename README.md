@@ -1,10 +1,10 @@
 [![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Abstration-version2.0?branchName=version2.0)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)
 
-|DependencyInjection.Autoregister.Abstraction|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Abstration-version2.0?branchName=version2.0)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)|2.0.0-preview01|   |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+|DependencyInjection.Autoregister.Abstraction|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Abstration-version2.0?branchName=version2.0)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)|2.0.0-preview01|
+|---|---|---|
+|DependencyInjection.Autoregister.Providers.Autofac|   |2.0.0-preview01|
+|DependencyInjection.Autoregister.Providers.ServiceCollection|   |2.0.0-preview01|
+|DependencyInjection.Autoregister.Providers.Unity|   |2.0.0-preview01|
 
 # DependendyInjection.Autoregister
 Dependency injection autoregistration with attribute
