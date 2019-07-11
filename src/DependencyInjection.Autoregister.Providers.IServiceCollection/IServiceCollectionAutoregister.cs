@@ -40,13 +40,13 @@ namespace DependencyInjection.Autoregister.Providers.ServiceCollection
                 GetTypesWithHelpAttribute(services, loadAssembly);
             }
 
-            foreach (Type type in assembly.GetTypes())
-            {
-                if (type.GetCustomAttributes(typeof(DependencyRegistration), true).Length > 0)
-                {
-                    AddToStack(services, type);
-                }
-            }
+            //foreach (Type type in assembly.GetTypes())
+            //{
+            //    if (type.GetCustomAttributes(typeof(DependencyRegistration), true).Length > 0)
+            //    {
+            //        AddToStack(services, type);
+            //    }
+            //}
         }
 
         private static void AddToStack(IServiceCollection services, Type type)

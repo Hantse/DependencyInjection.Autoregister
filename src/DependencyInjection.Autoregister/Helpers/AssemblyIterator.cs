@@ -40,6 +40,19 @@ namespace DependencyInjection.Autoregister.Abstraction.Helpers
 
         private static void GetTypesWithHelpAttribute(Assembly assembly, Func<AssemblyName, bool> predicate)
         {
+            foreach (Type type in assembly.GetTypes())
+            {
+                if (type.GetCustomAttributes(typeof(DependencyRegistration), true).Length > 0)
+                {
+                    AddToStack(type);
+                }
+            }
+
+            GetTypesWithHelpAttributeFromChild(assembly, predicate);
+        }
+
+        public static void GetTypesWithHelpAttributeFromChild(Assembly assembly, Func<AssemblyName, bool> predicate)
+        {
             foreach (AssemblyName asem in assembly.GetReferencedAssemblies().Where(predicate))
             {
                 Assembly loadAssembly = Assembly.Load(asem);
@@ -52,15 +65,7 @@ namespace DependencyInjection.Autoregister.Abstraction.Helpers
                     }
                 }
 
-                GetTypesWithHelpAttribute(loadAssembly, predicate);
-            }
-
-            foreach (Type type in assembly.GetTypes())
-            {
-                if (type.GetCustomAttributes(typeof(DependencyRegistration), true).Length > 0)
-                {
-                    AddToStack(type);
-                }
+                GetTypesWithHelpAttributeFromChild(loadAssembly, predicate);
             }
         }
 
