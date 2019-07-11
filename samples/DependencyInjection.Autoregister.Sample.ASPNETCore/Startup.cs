@@ -1,4 +1,4 @@
-﻿using DependencyInjection.Autoregister.Providers.ServiceCollection;
+﻿using DependencyInjection.Autoregister.Providers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
