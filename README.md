@@ -1,3 +1,8 @@
+
+# DependendyInjection.Autoregister
+Dependency injection autoregistration with attribute
+
+
 | Package | Build | Version |
 |-|-|-|
 |DependencyInjection.Autoregister.Abstraction|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Abstration-version2.0?branchName=version2.0)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)|[0.0.1-preview01](https://www.nuget.org/packages/DependencyInjection.Autoregister.Abstraction)|
@@ -5,8 +10,6 @@
 |DependencyInjection.Autoregister.Providers.ServiceCollection|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Abstration-version2.0?branchName=version2.0)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)|2.0.0-preview01|
 |DependencyInjection.Autoregister.Providers.Unity|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Abstration-version2.0?branchName=version2.0)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)||
 
-# DependendyInjection.Autoregister
-Dependency injection autoregistration with attribute
 
 ## DependencyInjection.Autoregister.Abstraction
 Provide an helper and attribute. Helper return all type must be register and load in specific assembly, after you can implement your own registration system.
