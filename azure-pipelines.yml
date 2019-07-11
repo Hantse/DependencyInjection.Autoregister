@@ -19,7 +19,7 @@ steps:
     command: 'restore'
 
 - task: DotNetCoreCLI@2
-  displayName: Running tests
+  displayName: dotnet test
   inputs:
     command: 'test'
     projects: './tests/DependencyInjection.Autoregister.Abstraction.Tests/DependencyInjection.Autoregister.Abstraction.Tests.csproj
@@ -33,3 +33,19 @@ steps:
     command: 'build'
     arguments: '--configuration $(buildConfiguration)'
     projects: './src/DependencyInjection.Autoregister/DependencyInjection.Autoregister.Abstraction.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: "dotnet pack"
+  inputs:
+    command: 'pack'
+    arguments: '--configuration $(buildConfiguration)'
+    packagesToPack: './src/DependencyInjection.Autoregister/DependencyInjection.Autoregister.Abstraction.csproj'
+    nobuild: true
+    versioningScheme: 'off'
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '/80526eae-c9de-4abc-b0b4-182911d05170'
