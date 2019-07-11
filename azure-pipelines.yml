@@ -22,13 +22,13 @@ steps:
   inputs:
     command: 'build'
     arguments: '--configuration $(buildConfiguration) /p:Version=$(buildNumber)'
-    projects: './src/DependencyInjection.Autoregister/DependencyInjection.Autoregister.Abstraction.csproj'
+    projects: './src/DependencyInjection.Autoregister.Providers.IServiceCollection/DependencyInjection.Autoregister.Providers.IServiceCollection.csproj'
 
 - task: DotNetCoreCLI@2
   displayName: dotnet test
   inputs:
     command: 'test'
-    projects: './tests/DependencyInjection.Autoregister.Abstraction.Tests/DependencyInjection.Autoregister.Abstraction.Tests.csproj'
+    projects: './tests/DependencyInjection.Autoregister.Providers.IServiceCollection.Tests/DependencyInjection.Autoregister.Providers.IServiceCollection.Tests.csproj'
 
 # - task: DotNetCoreCLI@2
 #   displayName: "dotnet pack"
