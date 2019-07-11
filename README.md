@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/Hantse.DependencyInjection.Autoregister-version2.0?branchName=version2.0)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=24&branchName=version2.0)
+[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Abstration-version2.0?branchName=version2.0)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)
 
 # DependendyInjection.Autoregister
 Dependency injection autoregistration with attribute
