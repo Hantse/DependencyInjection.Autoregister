@@ -14,13 +14,35 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet restore'
+  displayName: Restore
   inputs:
     command: 'restore'
+
+- task: DotNetCoreCLI@2
+  displayName: dotnet test
+  inputs:
+    command: 'test'
+    projects: './tests/DependencyInjection.Autoregister.Abstraction.Tests/DependencyInjection.Autoregister.Abstraction.Tests.csproj'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
   inputs:
     command: 'build'
-    arguments: '--configuration $(buildConfiguration)'
+    arguments: '--configuration $(buildConfiguration) /p:Version=$(Build.BuildNumber)'
     projects: './src/DependencyInjection.Autoregister/DependencyInjection.Autoregister.Abstraction.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: "dotnet pack"
+  inputs:
+    command: 'pack'
+    arguments: '--configuration $(buildConfiguration) --no-build -o $(build.artifactStagingDirectory)'
+    packagesToPack: './src/DependencyInjection.Autoregister/DependencyInjection.Autoregister.Abstraction.csproj'
+    nobuild: true
+    versioningScheme: 'off'
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '/80526eae-c9de-4abc-b0b4-182911d05170'
