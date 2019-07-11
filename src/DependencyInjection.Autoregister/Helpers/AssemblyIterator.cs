@@ -17,20 +17,23 @@ namespace DependencyInjection.Autoregister.Abstraction.Helpers
             "System"
         };
 
-        private static ServiceRegistration[] AutoregisterFromAssembly(Assembly assembly)
+        public static ServiceRegistration[] LoadFromAssembly(Assembly assembly)
         {
+            _serviceRegistrations = new List<ServiceRegistration>();
             GetTypesWithHelpAttribute(assembly, a => !_exludeNamespaceStartWith.Any(s => a.FullName.StartsWith(s)));
             return _serviceRegistrations.ToArray();
         }
 
-        private static ServiceRegistration[] AutoregisterFromAssembly(Assembly assembly, string startWith)
+        public static ServiceRegistration[] LoadFromAssembly(Assembly assembly, string startWith)
         {
+            _serviceRegistrations = new List<ServiceRegistration>();
             GetTypesWithHelpAttribute(assembly, a => a.FullName.StartsWith(startWith));
             return _serviceRegistrations.ToArray();
         }
 
-        private static ServiceRegistration[] AutoregisterFromAssembly(Assembly assembly, string[] startsWith)
+        public static ServiceRegistration[] LoadFromAssembly(Assembly assembly, string[] startsWith)
         {
+            _serviceRegistrations = new List<ServiceRegistration>();
             GetTypesWithHelpAttribute(assembly, a => startsWith.Any(s => a.FullName.StartsWith(s)));
             return _serviceRegistrations.ToArray();
         }
