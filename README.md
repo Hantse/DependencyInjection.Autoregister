@@ -115,11 +115,11 @@ It's a implementation for autoregister on IServiceCollection provider.
 
 Package Manager
 ```
-PM> Install-Package DependencyInjection.Autoregister.Providers.ServiceCollection -Version 0.0.1-preview02
+PM> Install-Package DependencyInjection.Autoregister.Providers.ServiceCollection -Version 0.0.1-preview02-071219
 ```
 DotNet CLI
 ```
-dotnet add package DependencyInjection.Autoregister.Providers.ServiceCollection --version 0.0.1-preview02
+dotnet add package DependencyInjection.Autoregister.Providers.ServiceCollection --version 0.0.1-preview02-071219
 ```
 
 ### Autoregister on ASPNET Core
