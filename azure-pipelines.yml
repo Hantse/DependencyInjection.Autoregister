@@ -28,7 +28,7 @@ steps:
   displayName: 'dotnet build'
   inputs:
     command: 'build'
-    arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.NuGetVersion)'
+    arguments: '--configuration $(buildConfiguration) /p:Version=$(Build.BuildNumber)'
     projects: './src/DependencyInjection.Autoregister/DependencyInjection.Autoregister.Abstraction.csproj'
 
 - task: DotNetCoreCLI@2
