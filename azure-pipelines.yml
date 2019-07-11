@@ -42,7 +42,6 @@ steps:
     versioningScheme: 'off'
 
 - task: NuGetCommand@2
-  condition: and(succeeded())
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
