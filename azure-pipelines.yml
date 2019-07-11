@@ -14,16 +14,18 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet restore'
+  displayName: Restore
   inputs:
     command: 'restore'
+
 - task: DotNetCoreCLI@2
+  displayName: Running tests
   inputs:
     command: 'test'
-    projects: './tests/DependencyInjection.Autoregister.Abstraction.Tests.csproj
-      ./tests/DependencyInjection.Autoregister.Providers.Autofac.Tests.csproj
-      ./tests/DependencyInjection.Autoregister.Providers.IServiceCollection.Tests.csproj
-      ./tests/DependencyInjection.Autoregister.Providers.Unity.Tests.csproj'
+    projects: './tests/DependencyInjection.Autoregister.Abstraction.Tests/DependencyInjection.Autoregister.Abstraction.Tests.csproj
+      ./tests/DependencyInjection.Autoregister.Providers.Autofac.Tests/DependencyInjection.Autoregister.Providers.Autofac.Tests.csproj
+      ./tests/DependencyInjection.Autoregister.Providers.IServiceCollection.Tests/DependencyInjection.Autoregister.Providers.IServiceCollection.Tests.csproj
+      ./tests/DependencyInjection.Autoregister.Providers.Unity.Tests/DependencyInjection.Autoregister.Providers.Unity.Tests.csproj'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
