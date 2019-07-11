@@ -22,25 +22,27 @@ steps:
   displayName: dotnet test
   inputs:
     command: 'test'
+    arguments: '--no-build'
     projects: './tests/DependencyInjection.Autoregister.Abstraction.Tests/DependencyInjection.Autoregister.Abstraction.Tests.csproj'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
   inputs:
     command: 'build'
-    arguments: '--configuration $(buildConfiguration)'
+    arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.NuGetVersion)'
     projects: './src/DependencyInjection.Autoregister/DependencyInjection.Autoregister.Abstraction.csproj'
 
 - task: DotNetCoreCLI@2
   displayName: "dotnet pack"
   inputs:
     command: 'pack'
-    arguments: '--configuration $(buildConfiguration)'
+    arguments: '--configuration $(buildConfiguration) --no-build -o $(build.artifactStagingDirectory)'
     packagesToPack: './src/DependencyInjection.Autoregister/DependencyInjection.Autoregister.Abstraction.csproj'
     nobuild: true
     versioningScheme: 'off'
 
 - task: NuGetCommand@2
+  condition: and(succeeded())
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
