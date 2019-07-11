@@ -23,7 +23,7 @@ steps:
   inputs:
     command: 'build'
     arguments: '--configuration $(buildConfiguration) /p:Version=$(buildNumber)'
-    projects: './src/DependencyInjection.Autoregister.Abstraction/DependencyInjection.Autoregister.Abstraction.csproj'
+    projects: './src/DependencyInjection.Autoregister/DependencyInjection.Autoregister.Abstraction.csproj'
 
 - task: DotNetCoreCLI@2
   displayName: dotnet test
