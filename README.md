@@ -26,7 +26,7 @@ DotNet CLI
 dotnet add package DependencyInjection.Autoregister.Abstraction --version 0.0.1-preview01
 ```
 
-# Use attribute on class
+# Use attribute for register
 ### Simple Usage
 ```csharp
 [DependencyRegistration]
