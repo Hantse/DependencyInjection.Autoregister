@@ -5,9 +5,9 @@ Dependency injection autoregistration with attribute
 
 | Package | Build | Version |
 |-|-|-|
-|DependencyInjection.Autoregister.Abstraction|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Abstraction?branchName=master)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)|[0.0.1-preview01](https://www.nuget.org/packages/DependencyInjection.Autoregister.Abstraction)|
+|DependencyInjection.Autoregister.Abstraction|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Abstraction?branchName=master)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=master)|[0.0.1-preview02](https://www.nuget.org/packages/DependencyInjection.Autoregister.Abstraction)|
 |DependencyInjection.Autoregister.Providers.Autofac|||
-|DependencyInjection.Autoregister.Providers.ServiceCollection|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Providers.ServiceCollection?branchName=master)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)|[0.0.1-preview01](https://www.nuget.org/packages/DependencyInjection.Autoregister.Providers.ServiceCollection)|
+|DependencyInjection.Autoregister.Providers.ServiceCollection|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Providers.ServiceCollection?branchName=master)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)|[0.0.1-preview02](https://www.nuget.org/packages/DependencyInjection.Autoregister.Providers.ServiceCollection)|
 |DependencyInjection.Autoregister.Providers.Unity|||
 
 
@@ -19,11 +19,11 @@ Provide an helper and attribute. Helper return all type must be register and loa
 
 Package Manager
 ```
-PM> Install-Package DependencyInjection.Autoregister.Abstraction -Version 0.0.1-preview01
+PM> Install-Package DependencyInjection.Autoregister.Abstraction -Version 0.0.1-preview02
 ```
 DotNet CLI
 ```
-dotnet add package DependencyInjection.Autoregister.Abstraction --version 0.0.1-preview01
+dotnet add package DependencyInjection.Autoregister.Abstraction --version 0.0.1-preview02
 ```
 
 ## Use attribute for register
@@ -115,11 +115,11 @@ It's a implementation for autoregister on IServiceCollection provider.
 
 Package Manager
 ```
-PM> Install-Package DependencyInjection.Autoregister.Providers.ServiceCollection -Version 0.0.1-preview01
+PM> Install-Package DependencyInjection.Autoregister.Providers.ServiceCollection -Version 0.0.1-preview02
 ```
 DotNet CLI
 ```
-dotnet add package DependencyInjection.Autoregister.Providers.ServiceCollection --version 0.0.1-preview01
+dotnet add package DependencyInjection.Autoregister.Providers.ServiceCollection --version 0.0.1-preview02
 ```
 
 ### Autoregister on ASPNET Core
