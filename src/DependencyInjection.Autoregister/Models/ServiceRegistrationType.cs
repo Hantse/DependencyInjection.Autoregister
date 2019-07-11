@@ -3,7 +3,7 @@
     public enum ServiceRegistrationType
     {
         SINGLETON,
-        TRANSCIENT,
+        TRANSIENT,
         SCOPED
     }
 

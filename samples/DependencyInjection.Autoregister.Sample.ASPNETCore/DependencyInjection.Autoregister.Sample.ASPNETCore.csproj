@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\DependencyInjection.Autoregister.Providers.IServiceCollection\DependencyInjection.Autoregister.Providers.ServiceCollection.csproj" />
+    <ProjectReference Include="..\..\src\DependencyInjection.Autoregister.Providers.ServiceCollection\DependencyInjection.Autoregister.Providers.ServiceCollection.csproj" />
     <ProjectReference Include="..\DependencyInjection.Autoregister.Sample.ExternalInjection\DependencyInjection.Autoregister.Sample.ExternalInjection.csproj" />
   </ItemGroup>
 

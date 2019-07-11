@@ -66,6 +66,7 @@ namespace DependencyInjection.Autoregister.Providers
                 Register(services, reg.Type, reg.ServiceType, reg.ImplementationType);
             }
         }
+
         private static void RegisterFromAssemlyLoad(IServiceCollection services, Assembly assembly, string startWith)
         {
             var registrations = AssemblyIterator.LoadFromAssembly(assembly, startWith);
@@ -94,7 +95,7 @@ namespace DependencyInjection.Autoregister.Providers
                 else
                     services.AddScoped(implementationType);
             }
-            else if (registrationType == ServiceRegistrationType.TRANSCIENT)
+            else if (registrationType == ServiceRegistrationType.TRANSIENT)
             {
                 if (serviceType != null)
                     services.AddTransient(serviceType, implementationType);
