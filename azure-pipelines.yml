@@ -17,6 +17,13 @@ steps:
   displayName: 'dotnet restore'
   inputs:
     command: 'restore'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: './tests/DependencyInjection.Autoregister.Abstraction.Tests.csproj
+      ./tests/DependencyInjection.Autoregister.Providers.Autofac.Tests.csproj
+      ./tests/DependencyInjection.Autoregister.Providers.IServiceCollection.Tests.csproj
+      ./tests/DependencyInjection.Autoregister.Providers.Unity.Tests.csproj'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
