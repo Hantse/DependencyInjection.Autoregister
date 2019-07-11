@@ -1,8 +1,7 @@
-﻿using DependencyInjection.Autoregister.Abstraction.Attributes;
+﻿using DependencyInjection.Autoregister.Abstraction.Helpers;
 using DependencyInjection.Autoregister.Abstraction.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Linq;
 using System.Reflection;
 
 namespace DependencyInjection.Autoregister.Providers.ServiceCollection
@@ -11,101 +10,49 @@ namespace DependencyInjection.Autoregister.Providers.ServiceCollection
     {
         public static IServiceCollection AddAutoRegister(this IServiceCollection services)
         {
-            GetTypesWithHelpAttribute(services, Assembly.GetEntryAssembly());
+            RegisterFromAssemlyLoad(services, Assembly.GetExecutingAssembly());
             return services;
         }
 
         public static IServiceCollection AddAutoRegister(this IServiceCollection services, Assembly assembly)
         {
-            GetTypesWithHelpAttribute(services, assembly);
+            RegisterFromAssemlyLoad(services, assembly);
             return services;
         }
 
-        private static void GetTypesWithHelpAttribute(IServiceCollection services, Assembly assembly)
+        private static void RegisterFromAssemlyLoad(IServiceCollection services, Assembly assembly)
         {
-            foreach (AssemblyName asem in assembly.GetReferencedAssemblies()
-                .Where(a => !a.FullName.StartsWith("System")
-                            && !a.FullName.StartsWith("Microsoft")))
+            var registrations = AssemblyIterator.LoadFromAssembly(assembly);
+
+            foreach (var reg in registrations)
             {
-                Assembly loadAssembly = Assembly.Load(asem);
-
-                foreach (Type type in loadAssembly.GetTypes())
-                {
-                    if (type.GetCustomAttributes(typeof(DependencyRegistration), true).Length > 0)
-                    {
-                        AddToStack(services, type);
-                    }
-                }
-
-                GetTypesWithHelpAttribute(services, loadAssembly);
-            }
-
-            foreach (Type type in assembly.GetTypes())
-            {
-                if (type.GetCustomAttributes(typeof(DependencyRegistration), true).Length > 0)
-                {
-                    AddToStack(services, type);
-                }
+                Register(services, reg.Type, reg.ServiceType, reg.ImplementationType);
             }
         }
 
-        private static void AddToStack(IServiceCollection services, Type type)
-        {
-            ServiceRegistrationType registrationType = GetRegistrationType(type);
-            Type interfaceOf = GetRegistrationInterfaceType(type);
-            Type[] interfaces = type.GetInterfaces();
-
-            if (interfaceOf == null && interfaces.Length > 0)
-            {
-                for (int i = 0; i < interfaces.Length; i++)
-                {
-                    RegisterFromInterface(services, registrationType, type, interfaces[i]);
-                }
-            }
-            else
-            {
-                RegisterFromInterface(services, registrationType, type, interfaceOf);
-            }
-        }
-
-        private static void RegisterFromInterface(IServiceCollection services, ServiceRegistrationType registrationType, Type type, Type interfaceOf)
+        private static void Register(IServiceCollection services, ServiceRegistrationType registrationType, Type serviceType, Type implementationType)
         {
             if (registrationType == ServiceRegistrationType.SCOPED)
             {
-                if (interfaceOf != null)
-                    services.AddScoped(interfaceOf, type);
+                if (serviceType != null)
+                    services.AddScoped(serviceType, implementationType);
                 else
-                    services.AddScoped(type);
+                    services.AddScoped(implementationType);
             }
             else if (registrationType == ServiceRegistrationType.TRANSCIENT)
             {
-                if (interfaceOf != null)
-                    services.AddTransient(interfaceOf, type);
+                if (serviceType != null)
+                    services.AddTransient(serviceType, implementationType);
                 else
-                    services.AddTransient(type);
+                    services.AddTransient(implementationType);
             }
             else
             {
-                if (interfaceOf != null)
-                    services.AddSingleton(interfaceOf, type);
+                if (serviceType != null)
+                    services.AddSingleton(serviceType, implementationType);
                 else
-                    services.AddSingleton(type);
+                    services.AddSingleton(implementationType);
             }
-        }
-
-        private static ServiceRegistrationType GetRegistrationType(Type type)
-        {
-            return GetAttribute(type).RegistrationType;
-        }
-
-        private static Type GetRegistrationInterfaceType(Type type)
-        {
-            return GetAttribute(type).InterfaceOf;
-        }
-
-        private static DependencyRegistration GetAttribute(Type type)
-        {
-            return type.GetCustomAttributes(typeof(DependencyRegistration), true).First() as DependencyRegistration;
         }
     }
 }

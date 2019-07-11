@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\DependencyInjection.Autoregister\DependencyInjection.Autoregister.Abstraction.csproj" />
   </ItemGroup>
 
 </Project>
