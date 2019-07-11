@@ -7,7 +7,7 @@ Dependency injection autoregistration with attribute
 |-|-|-|
 |DependencyInjection.Autoregister.Abstraction|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Abstraction?branchName=master)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)|[0.0.1-preview01](https://www.nuget.org/packages/DependencyInjection.Autoregister.Abstraction)|
 |DependencyInjection.Autoregister.Providers.Autofac|||
-|DependencyInjection.Autoregister.Providers.ServiceCollection|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Providers.ServiceCollection?branchName=master)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)|0.0.1-preview01|
+|DependencyInjection.Autoregister.Providers.ServiceCollection|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Providers.ServiceCollection?branchName=master)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)|[0.0.1-preview01](https://www.nuget.org/packages/DependencyInjection.Autoregister.Providers.ServiceCollection)|
 |DependencyInjection.Autoregister.Providers.Unity|||
 
 
