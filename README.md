@@ -122,7 +122,7 @@ DotNet CLI
 dotnet add package DependencyInjection.Autoregister.Providers.ServiceCollection --version 0.0.1-preview01
 ```
 
-# Autoregister on ASPNET Core
+### Autoregister on ASPNET Core
 ```csharp
 public class Startup
 {
@@ -134,7 +134,7 @@ public class Startup
 }
 ```
 
-# Autoregister without ASPNET Core
+### Autoregister without ASPNET Core
 ```csharp
 var services = new Microsoft.Extensions.DependencyInjection.ServiceCollection();
 services.AddAutoRegister(Assembly.GetAssembly(typeof(MyAssemblyName)));
