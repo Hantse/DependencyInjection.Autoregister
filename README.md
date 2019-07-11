@@ -1,6 +1,6 @@
 [![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Abstration-version2.0?branchName=version2.0)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)
 
-|DependencyInjection.Autoregister.Abstraction|   |   |   |   |
+|DependencyInjection.Autoregister.Abstraction|[![Build Status](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_apis/build/status/DependencyInjection.Autoregister.Abstration-version2.0?branchName=version2.0)](https://dev.azure.com/grasseelsp/DependencyInjection.Autoregister/_build/latest?definitionId=25&branchName=version2.0)|2.0.0-preview01|   |   |
 |---|---|---|---|---|
 |   |   |   |   |   |
 |   |   |   |   |   |
