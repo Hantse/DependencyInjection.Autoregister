@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{06585499
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection.Autoregister.Abstraction.Tests", "tests\DependencyInjection.Autoregister.Abstraction.Tests\DependencyInjection.Autoregister.Abstraction.Tests.csproj", "{445DC70D-5636-45D3-88B7-9662FA852C7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection.Autoregister.Providers.IServiceCollection.Tests", "tests\DependencyInjection.Autoregister.Providers.IServiceCollection.Tests\DependencyInjection.Autoregister.Providers.IServiceCollection.Tests.csproj", "{8B315CC8-F69B-4058-9936-2ADCB3947385}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection.Autoregister.Providers.ServiceCollection.Tests", "tests\DependencyInjection.Autoregister.Providers.IServiceCollection.Tests\DependencyInjection.Autoregister.Providers.ServiceCollection.Tests.csproj", "{8B315CC8-F69B-4058-9936-2ADCB3947385}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection.Autoregister.Providers.Autofac", "src\DependencyInjection.Autoregister.Providers.Autofac\DependencyInjection.Autoregister.Providers.Autofac.csproj", "{60C85166-1AC2-4DC2-8CBD-A15CAB5C5B6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection.Autoregister.Providers.Autofac", "src\DependencyInjection.Autoregister.Providers.Autofac\DependencyInjection.Autoregister.Providers.Autofac.csproj", "{60C85166-1AC2-4DC2-8CBD-A15CAB5C5B6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection.Autoregister.Providers.Unity", "src\DependencyInjection.Autoregister.Providers.Unity\DependencyInjection.Autoregister.Providers.Unity.csproj", "{8E255281-43D0-4D36-959A-A3D75B43E4AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection.Autoregister.Providers.Unity", "src\DependencyInjection.Autoregister.Providers.Unity\DependencyInjection.Autoregister.Providers.Unity.csproj", "{8E255281-43D0-4D36-959A-A3D75B43E4AC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection.Autoregister.Providers.Autofac.Tests", "tests\DependencyInjection.Autoregister.Providers.Autofac.Tests\DependencyInjection.Autoregister.Providers.Autofac.Tests.csproj", "{4D931FD1-587C-471F-A618-0D3F5C8BA655}"
 EndProject
@@ -29,11 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection.Autoreg
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection.Autoregister.Sample.ExternalInjection", "samples\DependencyInjection.Autoregister.Sample.ExternalInjection\DependencyInjection.Autoregister.Sample.ExternalInjection.csproj", "{42704A9D-7FBB-4EF4-B5D8-5C2D84E010DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyMockTests", "tests\AssemblyMockTests\AssemblyMockTests.csproj", "{320D5BDC-6741-41ED-9427-AD37E3CEC032}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssemblyMockTests", "tests\AssemblyMockTests\AssemblyMockTests.csproj", "{320D5BDC-6741-41ED-9427-AD37E3CEC032}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mocks", "Mocks", "{E5D32C94-6491-434D-B8ED-47171E74094D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblySubMockTests", "tests\AssemblySubMockTests\AssemblySubMockTests.csproj", "{D0F71193-FB5D-4BD8-B7CB-3F62BC71DBEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssemblySubMockTests", "tests\AssemblySubMockTests\AssemblySubMockTests.csproj", "{D0F71193-FB5D-4BD8-B7CB-3F62BC71DBEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

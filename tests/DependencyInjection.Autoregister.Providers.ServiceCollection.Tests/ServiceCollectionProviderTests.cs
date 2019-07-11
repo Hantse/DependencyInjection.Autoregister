@@ -4,7 +4,7 @@ using System;
 using System.Reflection;
 using Xunit;
 
-namespace DependencyInjection.Autoregister.Providers.IServiceCollection.Tests
+namespace DependencyInjection.Autoregister.Providers.ServiceCollection.Tests
 {
     public class ServiceCollectionProviderTests
     {
@@ -16,7 +16,7 @@ namespace DependencyInjection.Autoregister.Providers.IServiceCollection.Tests
         [Fact]
         public void ShouldLoadSomeServicesFromExecutingAssembly_CheckRegistrationByImplementation_LoadByAssembly()
         {
-            var services = new ServiceCollection();
+            var services = new Microsoft.Extensions.DependencyInjection.ServiceCollection();
             services.AddAutoRegister(Assembly.GetAssembly(typeof(ServiceCollectionProviderTests)));
             var provider = services.BuildServiceProvider();
             var resolveService = provider.GetService<FirstClass>();
@@ -28,7 +28,7 @@ namespace DependencyInjection.Autoregister.Providers.IServiceCollection.Tests
         [Fact]
         public void ShouldLoadSomeServicesFromExecutingAssembly_CheckRegistrationByServiceType_LoadByAssembly()
         {
-            var services = new ServiceCollection();
+            var services = new Microsoft.Extensions.DependencyInjection.ServiceCollection();
             services.AddAutoRegister(Assembly.GetAssembly(typeof(ServiceCollectionProviderTests)));
             var provider = services.BuildServiceProvider();
             var resolveService = provider.GetService<ISecondClass>();
@@ -40,7 +40,7 @@ namespace DependencyInjection.Autoregister.Providers.IServiceCollection.Tests
         [Fact]
         public void ShouldLoadSomeServicesFromExecutingAssembly_CheckRegistrationByImplementation_LoadByType()
         {
-            var services = new ServiceCollection();
+            var services = new Microsoft.Extensions.DependencyInjection.ServiceCollection();
             services.AddAutoRegister(typeof(ServiceCollectionProviderTests));
             var provider = services.BuildServiceProvider();
             var resolveService = provider.GetService<FirstClass>();
@@ -52,7 +52,7 @@ namespace DependencyInjection.Autoregister.Providers.IServiceCollection.Tests
         [Fact]
         public void ShouldLoadSomeServicesFromExecutingAssembly_CheckRegistrationByServiceType_LoadByType()
         {
-            var services = new ServiceCollection();
+            var services = new Microsoft.Extensions.DependencyInjection.ServiceCollection();
             services.AddAutoRegister(typeof(ServiceCollectionProviderTests));
             var provider = services.BuildServiceProvider();
             var resolveService = provider.GetService<ISecondClass>();
